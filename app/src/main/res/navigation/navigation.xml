@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/reggistrationFragment">
+
+    <fragment
+        android:id="@+id/reggistrationFragment"
+        android:name="com.example.authflow.presentation.registration.ReggistrationFragment"
+        android:label="fragment_reggistration"
+        tools:layout="@layout/fragment_reggistration" />
+    <fragment
+        android:id="@+id/verifyEmailFragment"
+        android:name="com.example.authflow.presentation.verify_email.VerifyEmailFragment"
+        android:label="fragment_verify_email"
+        tools:layout="@layout/fragment_verify_email" />
+    <fragment
+        android:id="@+id/logginFragment"
+        android:name="com.example.authflow.presentation.login.LogginFragment"
+        android:label="fragment_loggin"
+        tools:layout="@layout/fragment_loggin" >
+        <action
+            android:id="@+id/action_logginFragment_to_reggistrationFragment"
+            app:destination="@id/reggistrationFragment" />
+        <action
+            android:id="@+id/action_logginFragment_to_loggedinFragment"
+            app:destination="@id/loggedinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loggedinFragment"
+        android:name="com.example.authflow.presentation.loggedin_page.LoggedinFragment"
+        android:label="fragment_loggedin"
+        tools:layout="@layout/fragment_loggedin" >
+        <action
+            android:id="@+id/action_loggedinFragment_to_verifyEmailFragment"
+            app:destination="@id/verifyEmailFragment" />
+    </fragment>
+</navigation>
